@@ -46,11 +46,11 @@ func SimplifySuperint(si Superint) Superint {
 	answer.negative = si.negative
 	carryover := 0
 	for _, digit := range si.digits {
-		answer.digits = append(answer.digits, (digit + carryover) % 10)
+		answer.digits = append(answer.digits, (digit+carryover)%10)
 		carryover = (digit + carryover) / 10
 	}
 	for ; carryover > 0; carryover /= 10 {
-		answer.digits = append(answer.digits, carryover % 10)
+		answer.digits = append(answer.digits, carryover%10)
 	}
 	return answer
 }
@@ -69,7 +69,7 @@ func AddSuperints(s1 Superint, s2 Superint) Superint {
 		}
 	}
 	for index := range s1.digits {
-		answer.digits = append(answer.digits, s1.digits[index] + s2.digits[index])
+		answer.digits = append(answer.digits, s1.digits[index]+s2.digits[index])
 	}
 	return SimplifySuperint(answer)
 }
@@ -92,6 +92,14 @@ func SuperintMultiple(s Superint, n int) Superint {
 	answer := zeroSuperint()
 	for i := 1; i <= n; i++ {
 		answer = AddSuperints(answer, sCopy)
+	}
+	return answer
+}
+
+func DigitSum(s Superint) int {
+	answer := 0
+	for _, num := range s.digits {
+		answer += num
 	}
 	return answer
 }

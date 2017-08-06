@@ -49,7 +49,6 @@ func ExampleAddSuperints() {
 		AddSuperints(StringToSuperint("207"), StringToSuperint("0")),
 		AddSuperints(StringToSuperint("431"), StringToSuperint("21")),
 		AddSuperints(StringToSuperint("21"), StringToSuperint("1431")),
-
 	)
 	// Output: 0 1 207 452 1452
 }
@@ -64,4 +63,13 @@ func ExampleMultiplySuperint() {
 		SuperintMultiple(StringToSuperint("1024"), 1024),
 	)
 	// Output: 0 0 4 399 399 1048576
+}
+
+func ExampleDigitSum() {
+	fmt.Println(
+		DigitSum(StringToSuperint("0")),
+		DigitSum(StringToSuperint("1234")),
+		DigitSum(StringToSuperint("54321")),
+	)
+	// Output: 0 10 15
 }
