@@ -9,7 +9,7 @@ type Superint struct {
 	negative bool
 }
 
-func String(si Superint) string {
+func (si Superint) String() string {
 	var answer string
 	for _, n := range si.digits {
 		answer = string(strconv.Itoa(n)) + answer
@@ -39,4 +39,37 @@ func StringToSuperint(s string) Superint {
 // Take an int and return its corresponding Superint
 func IntToSuperint(n int) Superint {
 	return StringToSuperint(strconv.Itoa(n))
+}
+
+func SimplifySuperint(si Superint) Superint {
+	var answer Superint
+	answer.negative = si.negative
+	carryover := 0
+	for _, digit := range si.digits {
+		answer.digits = append(answer.digits, (digit + carryover) % 10)
+		carryover = (digit + carryover) / 10
+	}
+	for ; carryover > 0; carryover /= 10 {
+		answer.digits = append(answer.digits, carryover % 10)
+	}
+	return answer
+}
+
+// for now, this only adds positive Superints
+func AddSuperints(s1 Superint, s2 Superint) Superint {
+	var answer Superint
+	sizeDiff := len(s1.digits) - len(s2.digits)
+	if sizeDiff > 0 {
+		for i := 1; i <= sizeDiff; i++ {
+			s2.digits = append(s2.digits, 0)
+		}
+	} else if sizeDiff < 0 {
+		for i := -1; i >= sizeDiff; i-- {
+			s1.digits = append(s1.digits, 0)
+		}
+	}
+	for index := range s1.digits {
+		answer.digits = append(answer.digits, s1.digits[index] + s2.digits[index])
+	}
+	return SimplifySuperint(answer)
 }
