@@ -56,12 +56,12 @@ func ExampleAddSuperints() {
 
 func ExampleMultiplySuperint() {
 	fmt.Println(
-		MultiplySuperint(StringToSuperint("0"), 5),
-		MultiplySuperint(StringToSuperint("4"), 0),
-		MultiplySuperint(StringToSuperint("4"), 1),
-		MultiplySuperint(StringToSuperint("21"), 19),
-		MultiplySuperint(StringToSuperint("19"), 21),
-		MultiplySuperint(StringToSuperint("1024"), 1024),
+		SuperintMultiple(StringToSuperint("0"), 5),
+		SuperintMultiple(StringToSuperint("4"), 0),
+		SuperintMultiple(StringToSuperint("4"), 1),
+		SuperintMultiple(StringToSuperint("21"), 19),
+		SuperintMultiple(StringToSuperint("19"), 21),
+		SuperintMultiple(StringToSuperint("1024"), 1024),
 	)
 	// Output: 0 0 4 399 399 1048576
 }

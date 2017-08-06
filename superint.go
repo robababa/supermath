@@ -82,7 +82,7 @@ func copySuperint(s Superint) Superint {
 	return Superint{digits: append([]int{}, s.digits...), negative: s.negative}
 }
 
-func MultiplySuperint(s Superint, n int) Superint {
+func SuperintMultiple(s Superint, n int) Superint {
 	if n == 0 {
 		return zeroSuperint()
 	} else if n == 1 {
