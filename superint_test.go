@@ -42,8 +42,26 @@ func ExampleSimplifySuperint() {
 	// Output: 1024 -1337 0 -123
 }
 
-//func ExampleAddSuperints() {
-//	fmt.Println(
-//
-//	)
-//}
+func ExampleAddSuperints() {
+	fmt.Println(
+		AddSuperints(StringToSuperint("0"), StringToSuperint("0")),
+		AddSuperints(StringToSuperint("0"), StringToSuperint("1")),
+		AddSuperints(StringToSuperint("207"), StringToSuperint("0")),
+		AddSuperints(StringToSuperint("431"), StringToSuperint("21")),
+		AddSuperints(StringToSuperint("21"), StringToSuperint("1431")),
+
+	)
+	// Output: 0 1 207 452 1452
+}
+
+func ExampleMultiplySuperint() {
+	fmt.Println(
+		MultiplySuperint(StringToSuperint("0"), 5),
+		MultiplySuperint(StringToSuperint("4"), 0),
+		MultiplySuperint(StringToSuperint("4"), 1),
+		MultiplySuperint(StringToSuperint("21"), 19),
+		MultiplySuperint(StringToSuperint("19"), 21),
+		MultiplySuperint(StringToSuperint("1024"), 1024),
+	)
+	// Output: 0 0 4 399 399 1048576
+}
