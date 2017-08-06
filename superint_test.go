@@ -73,3 +73,12 @@ func ExampleDigitSum() {
 	)
 	// Output: 0 10 15
 }
+
+func ExampleDigitCount() {
+	fmt.Println(
+		DigitCount(StringToSuperint("0")),
+		DigitCount(StringToSuperint("1234")),
+		DigitCount(StringToSuperint("54321")),
+	)
+	// Output: 1 4 5
+}

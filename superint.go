@@ -103,3 +103,7 @@ func DigitSum(s Superint) int {
 	}
 	return answer
 }
+
+func DigitCount(s Superint) int {
+	return len(s.digits)
+}
