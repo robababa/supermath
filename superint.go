@@ -89,11 +89,10 @@ func SuperintMultiple(s Superint, n int) Superint {
 		return s
 	}
 	sCopy := copySuperint(s)
-	answer := zeroSuperint()
-	for i := 1; i <= n; i++ {
-		answer = AddSuperints(answer, sCopy)
+	for i, d := range sCopy.digits {
+		sCopy.digits[i] = d * n
 	}
-	return answer
+	return SimplifySuperint(sCopy)
 }
 
 func DigitSum(s Superint) int {
