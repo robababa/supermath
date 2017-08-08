@@ -65,6 +65,19 @@ func ExampleMultiplySuperint() {
 	// Output: 0 0 4 399 399 1048576
 }
 
+func ExampleIntPower() {
+	fmt.Println(
+		IntPower(0, 5),
+		IntPower(4, 0),
+		IntPower(4, 1),
+		IntPower(12, 3),
+		IntPower(3, 10),
+		IntPower(2, 32),
+	)
+	// Output: 0 1 4 1728 59049 4294967296
+}
+
+
 func ExampleDigitSum() {
 	fmt.Println(
 		DigitSum(StringToSuperint("0")),

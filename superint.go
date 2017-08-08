@@ -1,6 +1,8 @@
 package supermath
 
-import "strconv"
+import (
+	"strconv"
+)
 
 // A Superint is a representation of a mathematical integer with an arbitrary
 // size, i.e. an unlimited number of digits
@@ -93,6 +95,18 @@ func SuperintMultiple(s Superint, n int) Superint {
 		sCopy.digits[i] = d * n
 	}
 	return SimplifySuperint(sCopy)
+}
+
+func IntPower(n int, power int) Superint {
+	// TODO: confirm power >= 0, and not n == power == 0
+	if power == 0 {
+		return Superint{digits: []int{1}, negative: false}
+	}
+	s := IntToSuperint(n)
+	for i := 2; i <= power; i++ {
+		s = SuperintMultiple(s, n)
+	}
+	return s
 }
 
 func DigitSum(s Superint) int {
