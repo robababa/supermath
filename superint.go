@@ -76,7 +76,7 @@ func AddSuperints(s1 Superint, s2 Superint) Superint {
 	return SimplifySuperint(answer)
 }
 
-func zeroSuperint() Superint {
+func ZeroSuperint() Superint {
 	return Superint{digits: []int{0}, negative: false}
 }
 
@@ -86,7 +86,7 @@ func copySuperint(s Superint) Superint {
 
 func SuperintMultiple(s Superint, n int) Superint {
 	if n == 0 {
-		return zeroSuperint()
+		return ZeroSuperint()
 	} else if n == 1 {
 		return s
 	}
