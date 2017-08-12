@@ -20,7 +20,6 @@ func sortKeys(m map[int]bool) []int {
 	}
 	sort.Ints(answer)
 	return answer
-
 }
 
 func ExamplePrimeMap() {
@@ -29,5 +28,13 @@ func ExamplePrimeMap() {
 	//Output:
 	//[2 3 5 7]
 	//[2 3 5 7 11 13 17 19]
+}
+
+func ExamplePrimeFactors() {
+	fmt.Println(PrimeFactors([]int{2,3,5,7}, 30))
+	fmt.Println(PrimeFactors([]int{2,3,5,7}, 45))
+	//Output:
+	//[2 3 5]
+	//[3 3 5]
 }
 

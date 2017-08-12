@@ -31,3 +31,15 @@ func PrimeMap(maxint int) map[int]bool {
 	}
 	return answer
 }
+
+func PrimeFactors(primes []int, n int) []int {
+	answer := []int{}
+	numLeft := n
+	for  i := 0; i < len(primes); i++ {
+		for ; numLeft % primes[i] == 0; {
+			answer = append(answer, primes[i])
+			numLeft /= primes[i]
+		}
+	}
+	return answer
+}
