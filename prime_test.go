@@ -6,8 +6,8 @@ import (
 )
 
 func ExamplePrimeSlice() {
-	fmt.Println(primeSlice(10))
-	fmt.Println(primeSlice(20))
+	fmt.Println(PrimeSlice(10))
+	fmt.Println(PrimeSlice(20))
 	//Output:
 	//[2 3 5 7]
 	//[2 3 5 7 11 13 17 19]
@@ -24,8 +24,8 @@ func sortKeys(m map[int]bool) []int {
 }
 
 func ExamplePrimeMap() {
-	fmt.Println(sortKeys(primeMap(10)))
-	fmt.Println(sortKeys(primeMap(20)))
+	fmt.Println(sortKeys(PrimeMap(10)))
+	fmt.Println(sortKeys(PrimeMap(20)))
 	//Output:
 	//[2 3 5 7]
 	//[2 3 5 7 11 13 17 19]

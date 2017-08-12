@@ -1,6 +1,6 @@
 package supermath
 
-func primeSlice(maxint int) []int {
+func PrimeSlice(maxint int) []int {
 	var answer []int
 	// loop through prime candidates
 CandidateLoop:
@@ -16,9 +16,9 @@ CandidateLoop:
 	return answer
 }
 
-func primeMap(maxint int) map[int]bool {
+func PrimeMap(maxint int) map[int]bool {
 	answer := make(map[int]bool)
-	for _, prime := range primeSlice(maxint) {
+	for _, prime := range PrimeSlice(maxint) {
 		answer[prime] = true
 	}
 	return answer
